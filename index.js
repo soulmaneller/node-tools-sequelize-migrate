@@ -24,15 +24,13 @@ inquirer.prompt( questions ).then( ans => {
     };
 
     let cmd = program.cmd || 'node_modules/.bin/sequelize';
-    console.log( `----------------- cmd -----------------` );
-    console.log( cmd );
     let args = [ 'migration:generate', '--name', ans.name ];
     if( cmd.match( /^npm run/g )) {
         args.unshift( '--' );
     }
     spawn( cmd, args, opts )
         .on( 'exit', () => {
-            console.log( `----------------- Finish -----------------` );
+            process.exit();
         })
         .on( 'error', code => {
             console.log( `----------------- Error -----------------` );
