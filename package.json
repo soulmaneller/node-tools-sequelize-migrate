@@ -1,0 +1,26 @@
+{
+  "name": "tools-sequelize-migrate",
+  "version": "0.0.0",
+  "description": "Description",
+  "author": "Sitthidet Chaksu <oxoox22@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "postversion": "git push && git push --tags && npm publish"
+  },
+  "bin": {
+    "tools-sequelize-migrate": "./index.js"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "commander": "^2.15.1",
+    "inquirer": "^6.0.0",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/soulmaneller/node-tools-sequelize-migrate"
+}
