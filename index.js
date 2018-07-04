@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const { spawn } = require( 'child_process' );
-const inquirer = require( 'inquirer' );
-const program = require( 'commander' );
+const inquirer  = require( 'inquirer' );
+const program   = require( 'commander' );
+const path      = require( 'path' );
 
 program
     .option( '-c, --cmd [command]', 'Command' )
@@ -23,7 +24,7 @@ inquirer.prompt( questions ).then( ans => {
         cwd: process.cwd(),
     };
 
-    let cmd = program.cmd || 'node_modules/.bin/sequelize';
+    let cmd = program.cmd || path.join( 'node_modules', '.bin', 'sequelize' );
     let args = [ 'migration:generate', '--name', ans.name ];
     if( cmd.match( /^npm run/g )) {
         args.unshift( '--' );
