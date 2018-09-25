@@ -25,7 +25,8 @@ inquirer.prompt( questions ).then( ans => {
     };
 
     let cmd = program.cmd || path.join( 'node_modules', '.bin', 'sequelize' );
-    let args = [ 'migration:generate', '--name', ans.name ];
+    const name = ans.name.replace( /\s+/g, '-' );
+    let args = [ 'migration:generate', '--name', name ];
     if( cmd.match( /^npm run/g )) {
         args.unshift( '--' );
     }
