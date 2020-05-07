@@ -1,6 +1,6 @@
 {
   "name": "tools-sequelize-migrate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Description",
   "author": "Sitthidet Chaksu <oxoox22@gmail.com>",
   "main": "index.js",
